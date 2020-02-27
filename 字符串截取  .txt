@@ -1,0 +1,16 @@
+字符串截取：
+格式：
+echo ${变量:变量里的第几个（从 0 开始为第 1 个）:3（包括自身截取几位）}
+echo${a:2:3}
+ 
+随机生成8位密码方法：
+#!/bin/bash
+a=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQORSUVWXYZ0123456789
+for i in {1..8}
+do
+ x=$[RANDOM%62]
+ pass=${a:x:1}
+ pass2=$pass2$pass
+done
+ echo $pass2
+然后用bash执行这脚本
